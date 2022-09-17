@@ -17,7 +17,7 @@ class UserProductsScreen extends StatelessWidget {
         ],
       ),
       body: RefreshIndicator(
-        onRefresh: () async => advoid_print('refesh products'),
+        onRefresh: () async => print('refesh products'),
         child: buildUserProductListView(productsManager),
       ),
     );

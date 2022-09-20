@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'cart_item_card.dart';
 import 'cart_manager.dart';
 
-class CartSreen extends StatelessWidget {
+class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
 
-  const CartSreen({super.key});
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

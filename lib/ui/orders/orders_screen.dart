@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'order_item_card.dart';
 import 'order_manager.dart';
 
+import '../shared/app_drawer.dart';
+
 class OrdersScreen extends StatelessWidget {
+  static const routeName = '/orders';
   const OrdersScreen({super.key});
 
   @override
@@ -19,6 +22,7 @@ class OrdersScreen extends StatelessWidget {
         itemBuilder: (context, index) =>
             OrderItemCard(ordersManager.orders[index]),
       ),
+      drawer: const AppDrawer(),
     );
   }
 }

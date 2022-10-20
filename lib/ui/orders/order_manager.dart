@@ -27,4 +27,15 @@ class OrdersManager with ChangeNotifier {
   List<OrderItem> get orders {
     return [..._orders];
   }
+
+  void addOrder(List<CartItem> cartProduct, double total) async {
+    _orders.insert(
+        0,
+        OrderItem(
+            id: 'c${DateTime.now().toIso8601String()}',
+            amount: total,
+            products: cartProduct,
+            dateTime: DateTime.now()));
+    notifyListeners();
+  }
 }

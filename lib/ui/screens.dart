@@ -7,3 +7,7 @@ export 'orders/order_manager.dart';
 export 'cart/cart_screen.dart';
 export 'cart/cart_manager.dart';
 export 'products/edit_product_screen.dart';
+
+export 'auth/ui/auth/auth_screen.dart';
+export 'auth/ui/auth/auth_manager.dart';
+export 'auth/ui/splash_screen.dart';

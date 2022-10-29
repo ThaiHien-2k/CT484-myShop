@@ -18,10 +18,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (ctx) => ProductsManager()),
+        // ChangeNotifierProvider(create: (ctx) => ProductsManager()),
         ChangeNotifierProvider(create: (ctx) => CartManager()),
         ChangeNotifierProvider(create: (ctx) => OrdersManager()),
         ChangeNotifierProvider(create: (ctx) => AuthManager()),
+        ChangeNotifierProxyProvider<AuthManager, ProductsManager>(
+          create: (ctx) => ProductsManager(),
+          update: (ctx, authManager, productsManager) {
+// Khi authManager có báo hiệu thay đổi thì đọc lại authToken
+// cho productManager
+            productsManager!.authToken = authManager.authToken;
+            return productsManager;
+          },
+        ),
       ],
       child: Consumer<AuthManager>(builder: (ctx, authManager, child) {
         return MaterialApp(
